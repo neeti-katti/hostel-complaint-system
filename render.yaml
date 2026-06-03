@@ -1,0 +1,32 @@
+# Render Blueprint — deploys the whole app as ONE free web service.
+# The build step compiles the React frontend; Express then serves it alongside
+# the API, so you get a single public URL.
+#
+# Secrets marked `sync: false` are NOT stored in the repo — Render will prompt
+# you for them in the dashboard (paste your TiDB Cloud connection details).
+services:
+  - type: web
+    name: hostel-complaint-system
+    runtime: node
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build && cd ../backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: INIT_DB_ON_BOOT   # create tables + seed demo accounts on first boot
+        value: "true"
+      - key: DB_SSL            # cloud MySQL requires TLS
+        value: "true"
+      - key: JWT_SECRET        # auto-generated strong secret
+        generateValue: true
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false

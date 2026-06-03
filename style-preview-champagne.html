@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Champagne — Refinements</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  body{font-family:'Jost',system-ui,sans-serif;background:#efe7da;}
+  .frame{border-radius:18px;overflow:hidden;}
+  .fr{font-family:'Fraunces',serif;}
+  .cg{font-family:'Cormorant Garamond',serif;}
+  .jost{font-family:'Jost',sans-serif;}
+  .lux{letter-spacing:.28em;}
+  /* palette */
+  :root{
+    --paper:#faf7f2; --paper2:#f2ebe0; --line:#e6ddd1; --line2:#f0eadf;
+    --ink:#5b4d3a; --taupe:#a08c6c; --sand:#b8a98c; --gold:#c8a96a; --golddk:#b08947;
+    --sage:#7d8a6a; --sageink:#5e7c5a;
+  }
+</style>
+</head>
+<body class="p-6">
+<div class="max-w-7xl mx-auto">
+  <h1 class="fr text-4xl mb-1" style="color:var(--ink);">Champagne, refined</h1>
+  <p class="jost mb-10" style="color:var(--taupe);">Four flavors of the look you liked, plus two login treatments. Pick a number — mix freely.</p>
+
+  <div class="grid lg:grid-cols-2 gap-10">
+
+    <!-- ===== F1 — CLASSIC ===== -->
+    <div>
+      <div class="flex items-baseline gap-3 mb-3">
+        <span class="fr text-2xl" style="color:var(--ink);">F1.</span>
+        <h2 class="fr text-xl" style="color:var(--ink);">Classic</h2>
+        <span class="jost text-sm" style="color:var(--taupe);">— the original. Soft white cards, Fraunces serif, tinted badges.</span>
+      </div>
+      <div class="frame" style="background:var(--paper);box-shadow:0 1px 0 var(--line) inset, 0 0 0 1px var(--line);">
+        <div class="px-6 py-4 flex items-center justify-between" style="border-bottom:1px solid var(--line);">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full grid place-items-center fr font-semibold text-white" style="background:var(--gold);">H</div>
+            <span class="fr text-lg font-semibold" style="color:var(--ink);">Hostel Complaints</span>
+          </div>
+          <span class="jost text-[11px] lux uppercase" style="color:var(--taupe);">Admin</span>
+        </div>
+        <div class="p-6">
+          <div class="grid grid-cols-4 gap-5 mb-6">
+            <div class="rounded-2xl p-4 bg-white" style="box-shadow:0 1px 0 var(--line2);"><p class="jost text-[10px] uppercase tracking-wider" style="color:var(--taupe);">Total</p><p class="fr text-3xl font-semibold" style="color:var(--ink);">42</p></div>
+            <div class="rounded-2xl p-4 bg-white" style="box-shadow:0 1px 0 var(--line2);"><p class="jost text-[10px] uppercase tracking-wider" style="color:var(--taupe);">Pending</p><p class="fr text-3xl font-semibold" style="color:var(--golddk);">12</p></div>
+            <div class="rounded-2xl p-4 bg-white" style="box-shadow:0 1px 0 var(--line2);"><p class="jost text-[10px] uppercase tracking-wider" style="color:var(--taupe);">Progress</p><p class="fr text-3xl font-semibold" style="color:var(--sage);">18</p></div>
+            <div class="rounded-2xl p-4 bg-white" style="box-shadow:0 1px 0 var(--line2);"><p class="jost text-[10px] uppercase tracking-wider" style="color:var(--taupe);">Resolved</p><p class="fr text-3xl font-semibold" style="color:var(--sageink);">12</p></div>
+          </div>
+          <div class="rounded-2xl bg-white overflow-hidden" style="box-shadow:0 1px 0 var(--line2);">
+            <div class="px-5 py-4 flex items-center justify-between" style="border-bottom:1px solid var(--line2);">
+              <div><p class="jost text-sm" style="color:var(--ink);">No hot water</p><p class="text-[11px] font-mono" style="color:var(--sand);">HCMS-NY4ZJW3N · water</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase px-3 py-1 rounded-full" style="background:#f6edda;color:var(--golddk);">Pending</span>
+            </div>
+            <div class="px-5 py-4 flex items-center justify-between" style="border-bottom:1px solid var(--line2);">
+              <div><p class="jost text-sm" style="color:var(--ink);">WiFi down in B-block</p><p class="text-[11px] font-mono" style="color:var(--sand);">HCMS-K7P2QX9M · internet</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase px-3 py-1 rounded-full" style="background:#eef0e8;color:var(--sage);">In Progress</span>
+            </div>
+            <div class="px-5 py-4 flex items-center justify-between">
+              <div><p class="jost text-sm" style="color:var(--ink);">Broken tube light</p><p class="text-[11px] font-mono" style="color:var(--sand);">HCMS-R3T8WZ1A · electricity</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase px-3 py-1 rounded-full" style="background:#e8efe6;color:var(--sageink);">Resolved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== F2 — GILDED (POSH+) ===== -->
+    <div>
+      <div class="flex items-baseline gap-3 mb-3">
+        <span class="fr text-2xl" style="color:var(--ink);">F2.</span>
+        <h2 class="fr text-xl" style="color:var(--ink);">Gilded</h2>
+        <span class="jost text-sm" style="color:var(--taupe);">— monogram crest, gold hairlines, ceremony. The most posh.</span>
+      </div>
+      <div class="frame" style="background:var(--paper);box-shadow:0 0 0 1px var(--line);">
+        <div class="px-6 py-4 flex items-center justify-between" style="border-bottom:1px solid rgba(200,169,106,.5);">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full grid place-items-center fr text-lg" style="border:1.5px solid var(--gold);color:var(--golddk);">H</div>
+            <div>
+              <span class="fr text-lg font-semibold block leading-tight" style="color:var(--ink);">Hostel Complaints</span>
+              <span class="jost text-[9px] lux uppercase" style="color:var(--gold);">Est. Residence Services</span>
+            </div>
+          </div>
+          <span class="jost text-[11px] lux uppercase" style="color:var(--golddk);">Admin</span>
+        </div>
+        <div class="p-6">
+          <div class="text-center mb-5">
+            <span class="jost text-[10px] lux uppercase" style="color:var(--taupe);">— Overview —</span>
+          </div>
+          <div class="grid grid-cols-4 mb-6" style="border-top:1px solid rgba(200,169,106,.4);border-bottom:1px solid rgba(200,169,106,.4);">
+            <div class="p-4 text-center" style="border-right:1px solid var(--line2);"><p class="jost text-[10px] uppercase tracking-wider" style="color:var(--taupe);">Total</p><p class="fr text-4xl" style="color:var(--ink);">42</p></div>
+            <div class="p-4 text-center" style="border-right:1px solid var(--line2);"><p class="jost text-[10px] uppercase tracking-wider" style="color:var(--taupe);">Pending</p><p class="fr text-4xl" style="color:var(--golddk);">12</p></div>
+            <div class="p-4 text-center" style="border-right:1px solid var(--line2);"><p class="jost text-[10px] uppercase tracking-wider" style="color:var(--taupe);">Progress</p><p class="fr text-4xl" style="color:var(--sage);">18</p></div>
+            <div class="p-4 text-center"><p class="jost text-[10px] uppercase tracking-wider" style="color:var(--taupe);">Resolved</p><p class="fr text-4xl" style="color:var(--sageink);">12</p></div>
+          </div>
+          <div>
+            <div class="py-4 flex items-center justify-between" style="border-bottom:1px solid var(--line2);">
+              <div><p class="fr text-lg" style="color:var(--ink);">No hot water</p><p class="text-[11px] font-mono" style="color:var(--sand);">HCMS-NY4ZJW3N · water</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase pb-0.5" style="color:var(--golddk);border-bottom:1px solid var(--gold);">Pending</span>
+            </div>
+            <div class="py-4 flex items-center justify-between" style="border-bottom:1px solid var(--line2);">
+              <div><p class="fr text-lg" style="color:var(--ink);">WiFi down in B-block</p><p class="text-[11px] font-mono" style="color:var(--sand);">HCMS-K7P2QX9M · internet</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase pb-0.5" style="color:var(--sage);border-bottom:1px solid var(--sage);">In Progress</span>
+            </div>
+            <div class="py-4 flex items-center justify-between">
+              <div><p class="fr text-lg" style="color:var(--ink);">Broken tube light</p><p class="text-[11px] font-mono" style="color:var(--sand);">HCMS-R3T8WZ1A · electricity</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase pb-0.5" style="color:var(--sageink);border-bottom:1px solid var(--sageink);">Resolved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== F3 — COUTURE (DELICATE) ===== -->
+    <div>
+      <div class="flex items-baseline gap-3 mb-3">
+        <span class="fr text-2xl" style="color:var(--ink);">F3.</span>
+        <h2 class="fr text-xl" style="color:var(--ink);">Couture</h2>
+        <span class="jost text-sm" style="color:var(--taupe);">— Cormorant, feather-light, no card fills, maximum air.</span>
+      </div>
+      <div class="frame" style="background:var(--paper);box-shadow:0 0 0 1px var(--line);">
+        <div class="px-8 py-6 flex items-center justify-between">
+          <span class="cg text-2xl font-medium tracking-wide" style="color:var(--ink);">Hostel Complaints</span>
+          <span class="jost text-[10px] lux uppercase" style="color:var(--taupe);">Admin</span>
+        </div>
+        <div class="px-8 pb-8">
+          <div class="grid grid-cols-4 gap-8 mb-8">
+            <div><p class="jost text-[10px] uppercase tracking-wider mb-1" style="color:var(--taupe);">Total</p><p class="cg text-5xl font-light" style="color:var(--ink);">42</p></div>
+            <div><p class="jost text-[10px] uppercase tracking-wider mb-1" style="color:var(--taupe);">Pending</p><p class="cg text-5xl font-light" style="color:var(--golddk);">12</p></div>
+            <div><p class="jost text-[10px] uppercase tracking-wider mb-1" style="color:var(--taupe);">Progress</p><p class="cg text-5xl font-light" style="color:var(--sage);">18</p></div>
+            <div><p class="jost text-[10px] uppercase tracking-wider mb-1" style="color:var(--taupe);">Resolved</p><p class="cg text-5xl font-light" style="color:var(--sageink);">12</p></div>
+          </div>
+          <div style="border-top:1px solid var(--line);">
+            <div class="py-5 flex items-center justify-between" style="border-bottom:1px solid var(--line2);">
+              <div><p class="cg text-xl" style="color:var(--ink);">No hot water</p><p class="jost text-[10px] uppercase tracking-wider" style="color:var(--sand);">HCMS-NY4ZJW3N — water</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase" style="color:var(--golddk);">Pending</span>
+            </div>
+            <div class="py-5 flex items-center justify-between" style="border-bottom:1px solid var(--line2);">
+              <div><p class="cg text-xl" style="color:var(--ink);">WiFi down in B-block</p><p class="jost text-[10px] uppercase tracking-wider" style="color:var(--sand);">HCMS-K7P2QX9M — internet</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase" style="color:var(--sage);">In Progress</span>
+            </div>
+            <div class="py-5 flex items-center justify-between">
+              <div><p class="cg text-xl" style="color:var(--ink);">Broken tube light</p><p class="jost text-[10px] uppercase tracking-wider" style="color:var(--sand);">HCMS-R3T8WZ1A — electricity</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase" style="color:var(--sageink);">Resolved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== F4 — WARM (COZY CONTRAST) ===== -->
+    <div>
+      <div class="flex items-baseline gap-3 mb-3">
+        <span class="fr text-2xl" style="color:var(--ink);">F4.</span>
+        <h2 class="fr text-xl" style="color:var(--ink);">Warm</h2>
+        <span class="jost text-sm" style="color:var(--taupe);">— deeper sand tones, taupe cards, soft shadow. Cozy &amp; tactile.</span>
+      </div>
+      <div class="frame" style="background:#efe6d8;box-shadow:0 0 0 1px #e2d6c2;">
+        <div class="px-6 py-4 flex items-center justify-between" style="border-bottom:1px solid #e2d6c2;">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl grid place-items-center fr font-semibold text-white" style="background:linear-gradient(135deg,#c8a96a,#a87f3f);">H</div>
+            <span class="fr text-lg font-semibold" style="color:#4a3d2c;">Hostel Complaints</span>
+          </div>
+          <span class="jost text-[11px] lux uppercase" style="color:#9a805a;">Admin</span>
+        </div>
+        <div class="p-6">
+          <div class="grid grid-cols-4 gap-4 mb-6">
+            <div class="rounded-2xl p-4" style="background:#f7f1e6;box-shadow:0 6px 16px -10px rgba(120,90,40,.4);"><p class="jost text-[10px] uppercase tracking-wider" style="color:#9a805a;">Total</p><p class="fr text-3xl font-semibold" style="color:#4a3d2c;">42</p></div>
+            <div class="rounded-2xl p-4" style="background:#f7f1e6;box-shadow:0 6px 16px -10px rgba(120,90,40,.4);"><p class="jost text-[10px] uppercase tracking-wider" style="color:#9a805a;">Pending</p><p class="fr text-3xl font-semibold" style="color:#a87f3f;">12</p></div>
+            <div class="rounded-2xl p-4" style="background:#f7f1e6;box-shadow:0 6px 16px -10px rgba(120,90,40,.4);"><p class="jost text-[10px] uppercase tracking-wider" style="color:#9a805a;">Progress</p><p class="fr text-3xl font-semibold" style="color:#6f7d5a;">18</p></div>
+            <div class="rounded-2xl p-4" style="background:#f7f1e6;box-shadow:0 6px 16px -10px rgba(120,90,40,.4);"><p class="jost text-[10px] uppercase tracking-wider" style="color:#9a805a;">Resolved</p><p class="fr text-3xl font-semibold" style="color:#566e4f;">12</p></div>
+          </div>
+          <div class="rounded-2xl overflow-hidden" style="background:#f7f1e6;box-shadow:0 8px 20px -12px rgba(120,90,40,.45);">
+            <div class="px-5 py-4 flex items-center justify-between" style="border-bottom:1px solid #ece1cf;">
+              <div><p class="jost text-sm" style="color:#4a3d2c;">No hot water</p><p class="text-[11px] font-mono" style="color:#b09a76;">HCMS-NY4ZJW3N · water</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase px-3 py-1 rounded-full" style="background:#efe1c4;color:#a87f3f;">Pending</span>
+            </div>
+            <div class="px-5 py-4 flex items-center justify-between" style="border-bottom:1px solid #ece1cf;">
+              <div><p class="jost text-sm" style="color:#4a3d2c;">WiFi down in B-block</p><p class="text-[11px] font-mono" style="color:#b09a76;">HCMS-K7P2QX9M · internet</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase px-3 py-1 rounded-full" style="background:#e6ebdc;color:#6f7d5a;">In Progress</span>
+            </div>
+            <div class="px-5 py-4 flex items-center justify-between">
+              <div><p class="jost text-sm" style="color:#4a3d2c;">Broken tube light</p><p class="text-[11px] font-mono" style="color:#b09a76;">HCMS-R3T8WZ1A · electricity</p></div>
+              <span class="jost text-[10px] tracking-widest uppercase px-3 py-1 rounded-full" style="background:#e0ead9;color:#566e4f;">Resolved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== LOGIN TREATMENTS ===== -->
+  <h2 class="fr text-2xl mt-14 mb-1" style="color:var(--ink);">…and how login would feel</h2>
+  <p class="jost mb-6" style="color:var(--taupe);">Two ways to treat the auth screens in this palette.</p>
+  <div class="grid lg:grid-cols-2 gap-10">
+
+    <!-- Login L1: centered card -->
+    <div>
+      <div class="flex items-baseline gap-3 mb-3"><span class="fr text-2xl" style="color:var(--ink);">L1.</span><h2 class="fr text-xl" style="color:var(--ink);">Centered card</h2></div>
+      <div class="frame grid place-items-center py-12" style="background:var(--paper2);box-shadow:0 0 0 1px var(--line);">
+        <div class="w-80 rounded-3xl bg-white p-8 text-center" style="box-shadow:0 24px 60px -30px rgba(120,90,40,.4);">
+          <div class="w-12 h-12 mx-auto rounded-full grid place-items-center fr text-xl text-white mb-4" style="background:var(--gold);">H</div>
+          <h3 class="fr text-2xl font-semibold mb-1" style="color:var(--ink);">Welcome back</h3>
+          <p class="jost text-xs mb-6" style="color:var(--taupe);">Sign in to your residence account</p>
+          <div class="text-left space-y-3">
+            <div><p class="jost text-[10px] uppercase tracking-wider mb-1" style="color:var(--taupe);">Email</p><div class="rounded-xl px-3 py-2.5" style="background:var(--paper);border:1px solid var(--line);"><span class="jost text-sm" style="color:var(--sand);">you@hostel.com</span></div></div>
+            <div><p class="jost text-[10px] uppercase tracking-wider mb-1" style="color:var(--taupe);">Password</p><div class="rounded-xl px-3 py-2.5" style="background:var(--paper);border:1px solid var(--line);"><span class="jost text-sm" style="color:var(--sand);">••••••••</span></div></div>
+            <div class="rounded-xl py-2.5 text-center text-white jost text-sm tracking-wider mt-2" style="background:var(--ink);">Sign In</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login L2: split with crest panel -->
+    <div>
+      <div class="flex items-baseline gap-3 mb-3"><span class="fr text-2xl" style="color:var(--ink);">L2.</span><h2 class="fr text-xl" style="color:var(--ink);">Split with crest panel</h2></div>
+      <div class="frame grid grid-cols-2" style="box-shadow:0 0 0 1px var(--line);min-height:300px;">
+        <div class="p-8 flex flex-col justify-center text-white" style="background:linear-gradient(160deg,#5b4d3a,#3d3325);">
+          <div class="w-12 h-12 rounded-full grid place-items-center fr text-xl mb-4" style="border:1.5px solid var(--gold);color:var(--gold);">H</div>
+          <h3 class="fr text-2xl leading-snug">Residence<br>Services</h3>
+          <p class="jost text-[11px] mt-3 leading-relaxed" style="color:#cdbfa6;">Report, track and resolve hostel matters with ease.</p>
+          <span class="jost text-[9px] lux uppercase mt-6" style="color:var(--gold);">— Since 2026 —</span>
+        </div>
+        <div class="p-8 flex flex-col justify-center" style="background:var(--paper);">
+          <h3 class="fr text-xl font-semibold mb-5" style="color:var(--ink);">Sign in</h3>
+          <div class="space-y-3">
+            <div class="rounded-xl px-3 py-2.5 bg-white" style="border:1px solid var(--line);"><span class="jost text-sm" style="color:var(--sand);">you@hostel.com</span></div>
+            <div class="rounded-xl px-3 py-2.5 bg-white" style="border:1px solid var(--line);"><span class="jost text-sm" style="color:var(--sand);">••••••••</span></div>
+            <div class="rounded-xl py-2.5 text-center text-white jost text-sm tracking-wider" style="background:var(--gold);">Sign In</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="text-center jost text-sm mt-12" style="color:var(--taupe);">Tell me a dashboard flavor (<span class="fr">F1–F4</span>) + a login treatment (<span class="fr">L1 / L2</span>), or mix — and I’ll build it across every page.</p>
+</div>
+</body>
+</html>
