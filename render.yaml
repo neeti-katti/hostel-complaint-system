@@ -9,7 +9,9 @@ services:
     name: hostel-complaint-system
     runtime: node
     plan: free
-    buildCommand: cd frontend && npm install && npm run build && cd ../backend && npm install
+    # --include=dev forces Vite/Tailwind (devDependencies) to install even
+    # though NODE_ENV=production, so the frontend build can run.
+    buildCommand: cd frontend && npm install --include=dev && npm run build && cd ../backend && npm install
     startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
