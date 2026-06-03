@@ -1,7 +1,11 @@
-// Creates the tables and seeds default admin/staff accounts.
+// Creates the tables and seeds accounts.
 // Exposed as initDb() so the server can run it on boot in production
 // (handy on hosts where you don't have shell access), and also runnable
 // directly via `npm run init-db` for local setup.
+//
+// The ADMIN account is driven by private env vars (ADMIN_EMAIL / ADMIN_PASSWORD)
+// so the real admin login is NEVER stored in the public repo. Set those in your
+// host's dashboard. The staff/student rows are low-risk demo logins.
 const fs = require('fs');
 const path = require('path');
 const mysql = require('mysql2/promise');
@@ -18,6 +22,16 @@ const baseConn = {
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || '',
   ssl: sslOpt,
+};
+
+// Admin credentials come from the environment (private). Defaults are only for
+// local development — in production you MUST set ADMIN_EMAIL + ADMIN_PASSWORD.
+const OLD_PUBLIC_ADMIN = 'admin@hostel.com';
+const admin = {
+  name: process.env.ADMIN_NAME || 'System Admin',
+  email: process.env.ADMIN_EMAIL || OLD_PUBLIC_ADMIN,
+  password: process.env.ADMIN_PASSWORD || 'admin123',
+  phone: process.env.ADMIN_PHONE || '+91 90000 00000',
 };
 
 async function initDb() {
@@ -42,9 +56,31 @@ async function initDb() {
   await conn.query(schema);
   console.log('Schema applied.');
 
-  // Seed default accounts (idempotent).
+  // --- Admin (upsert from env, so rotating ADMIN_PASSWORD always takes effect) ---
+  const adminHash = await bcrypt.hash(admin.password, 10);
+  const [adminRows] = await conn.query('SELECT id FROM users WHERE email = ?', [admin.email]);
+  if (adminRows.length > 0) {
+    await conn.query(
+      "UPDATE users SET name = ?, password = ?, phone = ?, role = 'admin' WHERE email = ?",
+      [admin.name, adminHash, admin.phone, admin.email]
+    );
+    console.log(`Updated admin: ${admin.email}`);
+  } else {
+    await conn.query(
+      "INSERT INTO users (name, email, password, role, phone) VALUES (?, ?, ?, 'admin', ?)",
+      [admin.name, admin.email, adminHash, admin.phone]
+    );
+    console.log(`Seeded admin: ${admin.email}`);
+  }
+  // If a private admin email is configured, remove the old public default admin
+  // so admin@hostel.com / admin123 can no longer be used.
+  if (admin.email !== OLD_PUBLIC_ADMIN) {
+    const [del] = await conn.query("DELETE FROM users WHERE email = ? AND role = 'admin'", [OLD_PUBLIC_ADMIN]);
+    if (del.affectedRows > 0) console.log(`Removed old public admin: ${OLD_PUBLIC_ADMIN}`);
+  }
+
+  // --- Demo staff/student accounts (idempotent, low-risk) ---
   const seedUsers = [
-    { name: 'System Admin', email: 'admin@hostel.com', password: 'admin123', role: 'admin', phone: '+91 90000 00000' },
     { name: 'Staff One', email: 'staff1@hostel.com', password: 'staff123', role: 'staff', phone: '+91 98765 43210' },
     { name: 'Staff Two', email: 'staff2@hostel.com', password: 'staff123', role: 'staff', phone: '+91 91234 56789' },
     { name: 'Demo Student', email: 'student@hostel.com', password: 'student123', role: 'student', room_number: 'A-101', phone: '+91 99887 76655' },

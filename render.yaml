@@ -22,6 +22,10 @@ services:
         value: "true"
       - key: JWT_SECRET        # auto-generated strong secret
         generateValue: true
+      - key: ADMIN_EMAIL       # your PRIVATE admin login (set in dashboard)
+        sync: false
+      - key: ADMIN_PASSWORD    # your PRIVATE admin password (set in dashboard)
+        sync: false
       - key: DB_HOST
         sync: false
       - key: DB_PORT
