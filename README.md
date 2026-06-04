@@ -57,7 +57,7 @@ The Vite dev server proxies `/api` to the backend on port 5000.
 
 | Role    | Email              | Password   |
 |---------|--------------------|------------|
-| Admin   | admin@hostel.com   | admin123   |
+| Admin   | admin@gmail.com    | admin1234  |
 | Staff   | staff1@hostel.com  | staff123   |
 | Staff   | staff2@hostel.com  | staff123   |
 | Student | student@hostel.com | student123 |
